@@ -3,6 +3,10 @@ import ipaddress
 
 app = Flask(__name__)
 
+@app.route("/")
+def home():
+    return render_template("index.html")
+
 @app.route("/ipcalc", methods=["GET"])
 def ipcalc():
     ip = request.args.get("host")       # 例如 192.168.0.1
